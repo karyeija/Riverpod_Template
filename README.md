@@ -44,4 +44,4 @@ lib/
 
 ---
 
-Feel free to customize this template for your project needs!
+*Feel free to customize this template for your project needs!*
