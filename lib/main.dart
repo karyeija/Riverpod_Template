@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_template/modules/custom_drawer.dart';
-import 'package:riverpod_template/modules/helpers.dart';
+import 'package:riverpod_template/Notifiers/navigation_notifier.dart';
+import 'package:riverpod_template/Notifiers/thememode_notifier.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
 }
 
+// ...existing code...
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //Define providers
+    final themeMode = ref.watch(themeModeProvider);
+    final themeModeNotifier = ref.read(themeModeProvider.notifier);
+
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(31, 116, 47, 95),
@@ -20,32 +24,26 @@ class MyApp extends ConsumerWidget {
         useMaterial3: true,
         brightness: Brightness.light,
       ),
-      darkTheme: ThemeData.light(useMaterial3: true),
-      home: const MainScreen(),
-    );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var pageHeight = UIHelpers.pageHeight(context);
-    return Scaffold(
-      drawer: const CustomDrawer(),
-      appBar: AppBar(
-        title: Text(
-          'Main Screen',
-          style: TextStyle(
-            fontSize: pageHeight * 0.09,
-            color: Colors.deepPurpleAccent,
-            fontFamily: 'Piazzolla',
-            fontFeatures: const [FontFeature.ordinalForms()],
-          ),
+      themeMode: themeMode,
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Riverpod Template'),
+          actions: [
+            IconButton(
+              icon: Icon(
+                themeMode == ThemeMode.dark
+                    ? Icons.light_mode
+                    : Icons.dark_mode,
+              ),
+              onPressed: themeModeNotifier.toggle,
+              tooltip: 'Toggle Theme',
+            ),
+          ],
         ),
+        body: const MainNavigation(),
       ),
-      body: const Center(),
     );
   }
 }
+// ...existing code...
