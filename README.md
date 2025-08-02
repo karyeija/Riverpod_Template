@@ -12,7 +12,7 @@ A starter template for Flutter applications using [Riverpod](https://riverpod.de
 
 1. **Clone the repository:**
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/karyeija/Riverpod_Template
     cd riverpod_template
     ```
 
